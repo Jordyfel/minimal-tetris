@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://8xaxwuyc2mwu"]
+
+[ext_resource type="Script" path="res://MainScene.cs" id="1_28tla"]
+[ext_resource type="Script" path="res://Field.cs" id="2_0gdth"]
+[ext_resource type="Resource" uid="uid://go5pvq8kwh0g" path="res://object_shapes/objectS.tres" id="2_oyvf3"]
+[ext_resource type="StyleBox" uid="uid://bye8xgysgnb3q" path="res://block_stylebox.tres" id="3_03jet"]
+[ext_resource type="Resource" uid="uid://cwbb87os573vx" path="res://object_shapes/objectT.tres" id="3_y0kvu"]
+[ext_resource type="Resource" uid="uid://dw42u7t8nqm1w" path="res://object_shapes/objectZ.tres" id="4_ouhv4"]
+[ext_resource type="Resource" uid="uid://2k8igjhf6q2o" path="res://object_shapes/shapeI.tres" id="5_0u5tm"]
+[ext_resource type="Resource" uid="uid://crkkcexa0pk3w" path="res://object_shapes/shapeJ.tres" id="6_emcl7"]
+[ext_resource type="Resource" uid="uid://b0a7rakysu6d4" path="res://object_shapes/shapeL.tres" id="7_aemi0"]
+[ext_resource type="Resource" uid="uid://bh1dfuc8jmxr7" path="res://object_shapes/shapeO.tres" id="8_c6ev6"]
+
+[node name="MainScene" type="Control" node_paths=PackedStringArray("_field", "_lossLabel", "_resetButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28tla")
+_objectShapes = Array[Object]([ExtResource("2_oyvf3"), ExtResource("3_y0kvu"), ExtResource("4_ouhv4"), ExtResource("5_0u5tm"), ExtResource("6_emcl7"), ExtResource("7_aemi0"), ExtResource("8_c6ev6")])
+_field = NodePath("Field")
+_lossLabel = NodePath("CenterContainer/LossLabel")
+_resetButton = NodePath("VBoxContainer/Button")
+
+[node name="Field" type="Node2D" parent="."]
+position = Vector2(220, 900)
+script = ExtResource("2_0gdth")
+CellSize = Vector2(40, 40)
+BlockStyleBox = ExtResource("3_03jet")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LossLabel" type="Label" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "You Lost!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 211.0
+offset_right = 990.0
+offset_bottom = 264.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 32
+text = "Restart"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Left - A"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Right - D"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rotate - R"
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Drop - Space
+"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ObjectShape" load_steps=2 format=3 uid="uid://crkkcexa0pk3w"]
+
+[ext_resource type="Script" path="res://ObjectShape.cs" id="1_ji3yd"]
+
+[resource]
+script = ExtResource("1_ji3yd")
+Points = PackedVector2Array(0, -1, 0, 0, 1, 0, 2, 0)
+Color = Color(0.0196078, 0.419608, 0.882353, 1)
